@@ -191,7 +191,7 @@ jobs:
     #     images: ${{ needs.deploy_infrastructure.outputs.output_containerregistryName }}.azurecr.io/${{ needs.deploy_infrastructure.outputs.output_containerName }}:${{ github.run_number }}
 
     - name: Download Build Artifacts-Website Application
-      uses: actions/download-artifact@v2
+      uses: actions/download-artifact@v4.1.7
       continue-on-error: false
       with:
         name: ImageProcessing.Web
@@ -209,7 +209,7 @@ jobs:
     # endpointUrl: 'https://${webhookEndpoint}.azurewebsites.net/api/updates'
 
     - name: Download Build Artifacts-Function Application
-      uses: actions/download-artifact@v2
+      uses: actions/download-artifact@v4.1.7
       continue-on-error: false
       with:
         name: ImageProcessing.FuncApp
